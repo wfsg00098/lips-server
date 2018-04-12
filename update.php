@@ -85,6 +85,7 @@ $currentver = $row[0];
             {
                 move_uploaded_file($_FILES["apk"]["tmp_name"],"/var/www/lips/update/".$version.".apk");
                 mysqli_query($sql,"update ver set version='".$version."' , size='".$size."';");
+                if ($log_operation) logger($sql,$_COOKIE[$usercookie],"更新APP版本至".$version);
                 echo("<script language=\"JavaScript\">alert(\"更新成功！\");</script>");
             }
         }
