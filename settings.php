@@ -42,7 +42,7 @@ function logger($sql,$user,$operation){
     $delpass = "";
     $sqlbkfn = "/root/lips/MySQL_lips_backup_";
     $file_upload_location = "/var/www/lips/upload/";
-    $file_save_location = "http://lips.guaiqihen.top/upload/";
+$file_save_location = "https://lips.guaiqihen.top/upload/";
     $no_need_login = false;
     $log_operation = true;
     $file_max_size = 4096000;
