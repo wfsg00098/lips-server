@@ -11,10 +11,13 @@ $table = mysqli_query($sql, "select COLUMN_NAME from information_schema.COLUMNS 
 mysqli_data_seek($table, 0);
 $title = null;
 $count = 0;
+
+if ($client_maintenance) $arr['maintenance'] = 1;
+
 while ($tablerow = mysqli_fetch_row($table)) $title[$count++] = $tablerow[0];
 //for ($i=0;$i<sizeof($title);$i++) echo ($title[$i]."\n");
 $result = mysqli_query($sql, "select * from " . $cat . ";");// or die("Query ".$cat." Failed");
-if (!mysqli_num_rows($result) or $cat == "log" or $cat == "user") die (json_encode($arr));
+if (!mysqli_num_rows($result) or $cat == "log" or $cat == "admin" or $client_maintenance or substr($cat, 0, 5) == "#user") die (json_encode($arr));
 if ($cat == "ver") {
     mysqli_data_seek($result, 0);
     $row = mysqli_fetch_row($result);

@@ -15,7 +15,14 @@
     <a href="#" class="logo"><strong>系统登录</strong></a>
 </header>
 
-<?php include "settings.php"; ?>
+<?php include "settings.php";
+
+
+if ($server_maintenance) {
+    echo("<script language=\"JavaScript\">alert(\"后台系统维护中！\");</script>");
+    die();
+}
+?>
 <!-- Main -->
 <section id="main">
     <div class="inner">
@@ -37,7 +44,7 @@
             mysqli_select_db($sql,$sqldbnm);// or die("Select Database Failed.");
             $username = covert($_POST["user"]);
             $password = sha1(covert($_POST["pass"]));
-            $result = mysqli_query($sql,"select * from user where username = '" . $username . "' and password = '" . $password . "';");// or die("Query failed.");
+            $result = mysqli_query($sql, "select * from admin where username = '" . $username . "' and password = '" . $password . "';");// or die("Query failed.");
             if (!mysqli_num_rows($result))
             {
                 echo("<script language=\"JavaScript\">alert(\"登录失败！\");</script>");
@@ -50,7 +57,7 @@
                 setcookie($usercookie,$username,0);
                 setcookie($tokencookie,$token,0);
                 setcookie($nickcookie,$nickname,0);
-                mysqli_query($sql,"update user set token='".$token."' where username='".$username."';");// or die("Set Token Failed.");
+                mysqli_query($sql, "update admin set token='" . $token . "' where username='" . $username . "';");// or die("Set Token Failed.");
                 if ($log_operation) logger($sql,$username,"登录");
 		echo("<script language=\"JavaScript\">alert(\"登录成功！\");</script>");
                 echo("<script language=\"JavaScript\">window.location.href='manage_brand.php';</script>");

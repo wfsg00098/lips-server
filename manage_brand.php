@@ -8,13 +8,20 @@
     <link rel="stylesheet" href="assets/css/main.css"/>
 </head>
 <body>
-<?php include "settings.php"; ?>
+<?php include "settings.php";
+
+if ($server_maintenance) {
+    echo("<script language=\"JavaScript\">alert(\"后台系统维护中！\");</script>");
+    die();
+}
+
+?>
 
 <!-- Header -->
 <header id="header">
     <a href="#" class="logo"><strong>品牌管理</strong></a>
     <nav>
-        <a href="userinfo.php">欢迎您，<?php echo($_COOKIE[$nickcookie]); ?></a>
+        <a href="admininfo.php">欢迎您，<?php echo($_COOKIE[$nickcookie]); ?></a>
         <a href="exit.php" class="icon fa-reply">退出登录</a>
         <a href="#menu">其他</a>
     </nav>
@@ -26,7 +33,7 @@ function islogged($sql, $usercookie, $tokencookie, $no_need_login)
     if ($no_need_login) return;
     $user = $_COOKIE[$usercookie];
     $token = $_COOKIE[$tokencookie];
-    $result = mysqli_query($sql, "select * from user where username = '" . $user . "' and token = '" . $token . "';");
+    $result = mysqli_query($sql, "select * from admin where username = '" . $user . "' and token = '" . $token . "';");
     if (!mysqli_num_rows($result)) {
         echo("<script language=\"JavaScript\">alert(\"请先登录！\");</script>");
         echo("<script language=\"JavaScript\">window.location.href='login.php';</script>");
@@ -53,7 +60,7 @@ islogged($sql, $usercookie, $tokencookie, $no_need_login);
 <!-- Main -->
 <section id="main">
     <div class="inner">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <p>请选择品牌</p>
             <select name="chosen">
                 <?php
@@ -71,6 +78,7 @@ islogged($sql, $usercookie, $tokencookie, $no_need_login);
             <p>新增品牌</p><br>
             储存名（可使用中文、英文、数字和下划线）<input type="text" name="brand_name"><br>
             显示名<input type="text" name="brand_show"><br>
+            品牌LOGO图<input type="file" name="brand_icon"><br>
             <input type="submit" name="add" value="新增">
             <input type="reset" value="清空"><br>
         </form>
@@ -93,11 +101,29 @@ islogged($sql, $usercookie, $tokencookie, $no_need_login);
                 if (mysqli_num_rows($result)) {
                     echo("<script language=\"JavaScript\">alert(\"品牌储存名已存在或与现有的储存名相近！\");</script>");
                 } else {
-                    $result = mysqli_query($sql, "insert into main values('" . $name . "','" . $name_show . "');");
-                    $result = mysqli_query($sql, "create table `" . $name . "` (name text,describ text);");
-                    if ($log_operation) logger($sql, $_COOKIE[$usercookie], "添加品牌：" . $name . "(" . $name_show . ")");
-                    echo("<script language=\"JavaScript\">alert(\"添加成功！\");</script>");
-                    echo "<script language=\"JavaScript\"> location.replace(location.href);</script>";
+
+                    if (!((($_FILES["content"]["type"] == "image/gif")
+                            || ($_FILES["content"]["type"] == "image/jpeg")
+                            || ($_FILES["content"]["type"] == "image/pjpeg")
+                            || ($_FILES["content"]["type"] == "image/png"))
+                        && ($_FILES["content"]["size"] < $file_max_size))) {
+                        echo("<script language=\"JavaScript\">alert(\"文件过大或类型不符！\");</script>");
+                    } else if ($_FILES["content"]["error"] > 0) {
+                        echo("<script language=\"JavaScript\">alert(\"上传失败！\");</script>");
+                    } else {
+                        $tempname = explode(".", $_FILES["content"]["name"]);
+                        $extname = $tempname[sizeof($tempname) - 1];
+                        $content = $name . "_LOGO_" . date("Y_m_d_H_i_s") . "_" . msectime() . "." . $extname;
+                        $content = covert($content);
+                        move_uploaded_file($_FILES["content"]["tmp_name"], $file_upload_location . $content);
+
+
+                        $result = mysqli_query($sql, "insert into main values('" . $name . "','" . $name_show . "','" . $file_upload_location . $content . "');");
+                        $result = mysqli_query($sql, "create table `" . $name . "` (name text,describ text,img text);");
+                        if ($log_operation) logger($sql, $_COOKIE[$usercookie], "添加品牌：" . $name . "(" . $name_show . ")");
+                        echo("<script language=\"JavaScript\">alert(\"添加成功！\");</script>");
+                        echo "<script language=\"JavaScript\"> location.replace(location.href);</script>";
+                    }
                 }
             }
 

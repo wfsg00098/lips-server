@@ -9,12 +9,18 @@
 </head>
 <body>
 <?php include "settings.php";
+
+if ($server_maintenance) {
+    echo("<script language=\"JavaScript\">alert(\"后台系统维护中！\");</script>");
+    die();
+}
+
 function islogged($sql,$usercookie,$tokencookie,$no_need_login)
 {
     if ($no_need_login) return;
     $user = $_COOKIE[$usercookie];
     $token = $_COOKIE[$tokencookie];
-    $result = mysqli_query($sql, "select * from user where username = '" . $user . "' and token = '" . $token . "';");
+    $result = mysqli_query($sql, "select * from admin where username = '" . $user . "' and token = '" . $token . "';");
     if (!mysqli_num_rows($result))
     {
         echo("<script language=\"JavaScript\">alert(\"请先登录！\");</script>");
@@ -39,7 +45,7 @@ $currentver = $row[0];
 <header id="header">
     <a href="#" class="logo"><strong>APP更新发布(当前版本:<?php echo ($currentver);?>)</strong></a>
     <nav>
-        <a href="userinfo.php">欢迎您，<?php echo($_COOKIE[$nickcookie]);  ?></a>
+        <a href="admininfo.php">欢迎您，<?php echo($_COOKIE[$nickcookie]); ?></a>
         <a href="exit.php" class="icon fa-reply">退出登录</a>
     </nav>
 </header>

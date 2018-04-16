@@ -11,12 +11,18 @@
 
 <?php
 include "settings.php";
+
+if ($server_maintenance) {
+    echo("<script language=\"JavaScript\">alert(\"后台系统维护中！\");</script>");
+    die();
+}
+
 function islogged($sql,$usercookie,$tokencookie,$no_need_login)
 {
     if ($no_need_login) return;
     $user = $_COOKIE[$usercookie];
     $token = $_COOKIE[$tokencookie];
-    $result = mysqli_query($sql, "select * from user where username = '" . $user . "' and token = '" . $token . "';");
+    $result = mysqli_query($sql, "select * from admin where username = '" . $user . "' and token = '" . $token . "';");
     if (!mysqli_num_rows($result))
     {
         echo("<script language=\"JavaScript\">alert(\"请先登录！\");</script>");
@@ -69,21 +75,21 @@ islogged($sql,$usercookie,$tokencookie,$no_need_login);
                 }
                 else
                 {
-                    $result = mysqli_query($sql, "select * from user where username = '" . $user . "' and password = '" . sha1($old) . "';");
+                    $result = mysqli_query($sql, "select * from admin where username = '" . $user . "' and password = '" . sha1($old) . "';");
                     mysqli_data_seek($result,0);
                     if (!mysqli_num_rows($result)) {
                         echo("<script language=\"JavaScript\">alert(\"旧密码错误！\");</script>");
                     }
                     else
                     {
-                        $result = mysqli_query($sql, "update user set password='".sha1($new)."' where username='".$user."';");
+                        $result = mysqli_query($sql, "update admin set password='" . sha1($new) . "' where username='" . $user . "';");
                         echo("<script language=\"JavaScript\">alert(\"密码修改成功！\");</script>");
                     }
                 }
             }
             if ($nick!="")
             {
-                $result = mysqli_query($sql, "select * from user where username = '" . $user . "' and password = '" . sha1($old) . "';");
+                $result = mysqli_query($sql, "select * from admin where username = '" . $user . "' and password = '" . sha1($old) . "';");
                 mysqli_data_seek($result,0);
                 if (!mysqli_num_rows($result))
                 {
@@ -91,7 +97,7 @@ islogged($sql,$usercookie,$tokencookie,$no_need_login);
                 }
                 else
                 {
-                    $result = mysqli_query($sql, "update user set nickname='".$nick."' where username='".$user."';");
+                    $result = mysqli_query($sql, "update admin set nickname='" . $nick . "' where username='" . $user . "';");
                     setcookie($nickcookie,$nick,0);
                     echo("<script language=\"JavaScript\">alert(\"昵称修改成功！\");</script>");
                 }

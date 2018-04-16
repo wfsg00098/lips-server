@@ -14,7 +14,7 @@ function islogged($sql, $usercookie, $tokencookie, $no_need_login)
     if ($no_need_login) return;
     $user = $_COOKIE[$usercookie];
     $token = $_COOKIE[$tokencookie];
-    $result = mysqli_query($sql, "select * from user where username = '" . $user . "' and token = '" . $token . "';");
+    $result = mysqli_query($sql, "select * from admin where username = '" . $user . "' and token = '" . $token . "';");
     if (!mysqli_num_rows($result)) {
         echo("<script language=\"JavaScript\">alert(\"请先登录！\");</script>");
         echo("<script language=\"JavaScript\">window.location.href='login.php';</script>");
@@ -34,7 +34,7 @@ islogged($sql, $usercookie, $tokencookie, $no_need_login);
 <header id="header">
     <a href="#" class="logo"><strong>操作历史</strong></a>
     <nav>
-        <a href="userinfo.php">欢迎您，<?php echo($_COOKIE[$nickcookie]); ?></a>
+        <a href="admininfo.php">欢迎您，<?php echo($_COOKIE[$nickcookie]); ?></a>
         <a href="exit.php" class="icon fa-reply">退出登录</a>
     </nav>
 </header>

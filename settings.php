@@ -47,6 +47,9 @@ function logger($sql,$user,$operation){
     $log_operation = true;
     $file_max_size = 4096000;
 
+$server_maintenance = false;
+$client_maintenance = false;
+
     //Font Size
     $start = 6;
     $end = 66;

@@ -10,12 +10,18 @@
 <body>
 <?php
 include "settings.php";
+
+if ($server_maintenance) {
+    echo("<script language=\"JavaScript\">alert(\"后台系统维护中！\");</script>");
+    die();
+}
+
 function islogged($sql,$usercookie,$tokencookie,$no_need_login)
 {
     if ($no_need_login) return;
     $user = $_COOKIE[$usercookie];
     $token = $_COOKIE[$tokencookie];
-    $result = mysqli_query($sql, "select * from user where username = '" . $user . "' and token = '" . $token . "';");
+    $result = mysqli_query($sql, "select * from admin where username = '" . $user . "' and token = '" . $token . "';");
     if (!mysqli_num_rows($result))
     {
         echo("<script language=\"JavaScript\">alert(\"请先登录！\");</script>");
@@ -43,7 +49,7 @@ if (!mysqli_fetch_row($result))
 <header id="header">
     <a href="#" class="logo"><strong>系列管理</strong>&nbsp;&nbsp;(当前品牌：<?php echo($brand_show); ?>)</a>
     <nav>
-        <a href="userinfo.php">欢迎您，<?php echo($_COOKIE[$nickcookie]);  ?></a>
+        <a href="admininfo.php">欢迎您，<?php echo($_COOKIE[$nickcookie]); ?></a>
         <a href="exit.php" class="icon fa-reply">退出登录</a>
     </nav>
 </header>
@@ -52,7 +58,7 @@ if (!mysqli_fetch_row($result))
 <!-- Main -->
 <section id="main">
     <div class="inner">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <p>请选择系列</p>
             <select name="chosen">
                 <?php
@@ -70,6 +76,7 @@ if (!mysqli_fetch_row($result))
             <p>新增系列</p>
             系列储存名（可使用中文、英文、数字和下划线）<input type="text" name="name"><br>
             系列描述<input type="text" name="describ"><br>
+            系列LOGO图<input type="file" name="icon"><br>
             <input type="submit" name="add" value="新增">
             <input type="reset" value="清空"><br><br><hr>
             <input type="submit" name="back" value="返回"><br><hr>
@@ -132,11 +139,31 @@ if (!mysqli_fetch_row($result))
                 }
                 else
                 {
-                    $result = mysqli_query($sql, "insert into `" . $brand . "` values('" . $name . "','" . $describ . "');");
+                    if (!((($_FILES["content"]["type"] == "image/gif")
+                            || ($_FILES["content"]["type"] == "image/jpeg")
+                            || ($_FILES["content"]["type"] == "image/pjpeg")
+                            || ($_FILES["content"]["type"] == "image/png"))
+                        && ($_FILES["content"]["size"] < $file_max_size))) {
+                        echo("<script language=\"JavaScript\">alert(\"文件过大或类型不符！\");</script>");
+                    } else if ($_FILES["content"]["error"] > 0) {
+                        echo("<script language=\"JavaScript\">alert(\"上传失败！\");</script>");
+                    } else {
+
+
+                        $tempname = explode(".", $_FILES["content"]["name"]);
+                        $extname = $tempname[sizeof($tempname) - 1];
+                        $content = $brand . "_" . $name . "_LOGO_" . date("Y_m_d_H_i_s") . "_" . msectime() . "." . $extname;
+                        $content = covert($content);
+                        move_uploaded_file($_FILES["content"]["tmp_name"], $file_upload_location . $content);
+
+
+                        $result = mysqli_query($sql, "insert into `" . $brand . "` values('" . $name . "','" . $describ . "','" . $file_upload_location . $content . "');");
                     $result = mysqli_query($sql, "create table `" . $brand . "_" . $name . "` (number varchar(10),describ text,color varchar(10));");
                     if ($log_operation) logger($sql,$_COOKIE[$usercookie],"添加系列：".$brand." - ".$name."(".$brand_show." - ".$describ.")");
                     echo("<script language=\"JavaScript\">alert(\"添加成功！\");</script>");
                     echo "<script language=\"JavaScript\"> location.replace(location.href);</script>";
+                }
+
                 }
             }
         }
