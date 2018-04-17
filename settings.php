@@ -32,26 +32,26 @@ function logger($sql,$user,$operation){
     mysqli_query($sql,"insert log values('".$user."','".date("Y_m_d_H_i_s")."_".msectime()."','".$operation."');");
 }
 
-    $sqladdr = "localhost";
-$sqluser = "lips";
-$sqlpass = "kab3l7986519";
-$sqldbnm = "lips";
-$usercookie = "4da5f456af465as4fds45f49w8afe";
-$tokencookie = "av4zb6gnu464gfv6a4f654ds6dsa4";
-$nickcookie = "h34pfsd98a8u14jcjkds9acji4jqc";
-$delpass = "wwwwwww";
-    $sqlbkfn = "/root/lips/MySQL_lips_backup_";
-    $file_upload_location = "/var/www/lips/upload/";
+$sqladdr = "localhost";
+$sqluser = "";
+$sqlpass = "";
+$sqldbnm = "";
+$usercookie = "";
+$tokencookie = "";
+$nickcookie = "";
+$delpass = "";
+$sqlbkfn = "/root/lips/MySQL_lips_backup_";
+$file_upload_location = "/var/www/lips/upload/";
 $file_save_location = "https://lips.guaiqihen.top/upload/";
-    $no_need_login = false;
-    $log_operation = true;
-    $file_max_size = 4096000;
+$no_need_login = false;
+$log_operation = true;
+$file_max_size = 4096000;
 
 $server_maintenance = false;
 $client_maintenance = false;
 
-    //Font Size
-    $start = 6;
-    $end = 66;
-    $gap = 2;
-    $defa = 20;
+//Font Size
+$start = 6;
+$end = 66;
+$gap = 2;
+$defa = 20;
