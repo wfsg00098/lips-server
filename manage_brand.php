@@ -53,6 +53,7 @@ islogged($sql, $usercookie, $tokencookie, $no_need_login);
     <ul class="links">
         <li><a href="update.php">更新APP</a></li>
         <li><a href="log.php">操作历史</a></li>
+        <li><a href="user_manager.php">用户管理</a></li>
     </ul>
 </nav>
 
