@@ -13,7 +13,7 @@ mysqli_data_seek($result, 0);
 if (mysqli_num_rows($result)) {
     $arr['nickname'] = mysqli_fetch_row($result)[2];
     $arr['status'] = "success";
-    die(json_encode($arr));
+    die(json_encode($arr, JSON_UNESCAPED_UNICODE + JSON_UNESCAPED_SLASHES));
 } else {
     $arr['status'] = "failed";
     die(json_encode($arr));
