@@ -59,7 +59,7 @@ if ($server_maintenance) {
                 setcookie($nickcookie,$nickname,0);
                 mysqli_query($sql, "update admin set token='" . $token . "' where username='" . $username . "';");// or die("Set Token Failed.");
                 if ($log_operation) logger($sql,$username,"登录");
-		echo("<script language=\"JavaScript\">alert(\"登录成功！\");</script>");
+                echo("<script language=\"JavaScript\">alert(\"登录成功！\");</script>");
                 echo("<script language=\"JavaScript\">window.location.href='manage_brand.php';</script>");
             }
         }

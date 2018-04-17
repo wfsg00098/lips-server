@@ -125,7 +125,7 @@ if (!mysqli_fetch_row($result))
             islogged($sql,$usercookie,$tokencookie,$no_need_login);
             $name = covert($_POST["name"]);
             $describ = covert2($_POST["describ"]);
-            if ($describ == "" or $name == "" or!isvalidstr($name))
+            if ($describ == "" or $name == "" or !isvalidstr($name) or $_FILES["icon"]["name"] == "")
             {
                 echo("<script language=\"JavaScript\">alert(\"请将信息填写完整！\");</script>");
             }
@@ -139,25 +139,25 @@ if (!mysqli_fetch_row($result))
                 }
                 else
                 {
-                    if (!((($_FILES["content"]["type"] == "image/gif")
-                            || ($_FILES["content"]["type"] == "image/jpeg")
-                            || ($_FILES["content"]["type"] == "image/pjpeg")
-                            || ($_FILES["content"]["type"] == "image/png"))
-                        && ($_FILES["content"]["size"] < $file_max_size))) {
+                    if (!((($_FILES["icon"]["type"] == "image/gif")
+                            || ($_FILES["icon"]["type"] == "image/jpeg")
+                            || ($_FILES["icon"]["type"] == "image/pjpeg")
+                            || ($_FILES["icon"]["type"] == "image/png"))
+                        && ($_FILES["icon"]["size"] < $file_max_size))) {
                         echo("<script language=\"JavaScript\">alert(\"文件过大或类型不符！\");</script>");
-                    } else if ($_FILES["content"]["error"] > 0) {
+                    } else if ($_FILES["icon"]["error"] > 0) {
                         echo("<script language=\"JavaScript\">alert(\"上传失败！\");</script>");
                     } else {
 
 
-                        $tempname = explode(".", $_FILES["content"]["name"]);
+                        $tempname = explode(".", $_FILES["icon"]["name"]);
                         $extname = $tempname[sizeof($tempname) - 1];
                         $content = $brand . "_" . $name . "_LOGO_" . date("Y_m_d_H_i_s") . "_" . msectime() . "." . $extname;
                         $content = covert($content);
-                        move_uploaded_file($_FILES["content"]["tmp_name"], $file_upload_location . $content);
+                        move_uploaded_file($_FILES["icon"]["tmp_name"], $file_upload_location . $content);
 
 
-                        $result = mysqli_query($sql, "insert into `" . $brand . "` values('" . $name . "','" . $describ . "','" . $file_upload_location . $content . "');");
+                        $result = mysqli_query($sql, "insert into `" . $brand . "` values('" . $name . "','" . $describ . "','" . $file_save_location . $content . "');");
                     $result = mysqli_query($sql, "create table `" . $brand . "_" . $name . "` (number varchar(10),describ text,color varchar(10));");
                     if ($log_operation) logger($sql,$_COOKIE[$usercookie],"添加系列：".$brand." - ".$name."(".$brand_show." - ".$describ.")");
                     echo("<script language=\"JavaScript\">alert(\"添加成功！\");</script>");

@@ -6,15 +6,13 @@ $sql = mysqli_connect($sqladdr, $sqluser, $sqlpass);
 mysqli_query($sql, "set names utf8mb4;");
 mysqli_select_db($sql, $sqldbnm);
 $username = covert($_GET["username"]);
-$oldpassword = covert($_GET["oldpassword"]);
-$newpassword = covert($_GET["newpassword"]);
+$nickname = covert($_GET["nickname"]);
 
+$result = mysqli_query($sql, "update user set nickname='" . $nickname . "' where username = '" . $username . "';");
+$result = mysqli_query($sql, "select * from user where username = '" . $username . "' and nickname = '" . $nickname . "';");
 
-$result = mysqli_query($sql, "select * from user where username = '" . $username . "' and password = '" . $oldpassword . "';");
 mysqli_data_seek($result, 0);
 if (mysqli_num_rows($result)) {
-    $result = mysqli_query($sql, "update user set password='" . $newpassword . "' where username = '" . $username . "';");
-    $result = mysqli_query($sql, "select * from user where username = '" . $username . "' and password = '" . $newpassword . "';");
     $arr['status'] = "success";
     die(json_encode($arr));
 } else {
