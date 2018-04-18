@@ -8,6 +8,8 @@ mysqli_select_db($sql, $sqldbnm);
 $username = covert($_GET["username"]);
 $type = $_GET["type"];
 $item = $_GET["item"];
+$show = $_GET["show"];
+$color = $_GET["color"];
 
 $result = mysqli_query($sql, "select * from `#user_" . $username . "_like` where item = '" . $item . "';");
 if (mysqli_num_rows($result)) {
@@ -15,7 +17,7 @@ if (mysqli_num_rows($result)) {
     die(json_encode($arr));
 }
 
-$result = mysqli_query($sql, "insert into `#user_" . $username . "_like` values('" . $type . "','" . $item . "');");
+$result = mysqli_query($sql, "insert into `#user_" . $username . "_like` values('" . $type . "','" . $item . "','" . $show . "','" . $color . "');");
 $result = mysqli_query($sql, "select * from `#user_" . $username . "_like` where item = '" . $item . "';");
 mysqli_data_seek($result, 0);
 if (mysqli_num_rows($result)) {

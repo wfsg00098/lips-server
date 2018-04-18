@@ -157,7 +157,7 @@ if (!mysqli_fetch_row($result))
                         move_uploaded_file($_FILES["icon"]["tmp_name"], $file_upload_location . $content);
 
 
-                        $result = mysqli_query($sql, "insert into `" . $brand . "` values('" . $name . "','" . $describ . "','" . $file_save_location . $content . "');");
+                        $result = mysqli_query($sql, "insert into `" . $brand . "` values('" . $name . "','" . $describ . "','" . $file_save_location . $content . "','');");
                     $result = mysqli_query($sql, "create table `" . $brand . "_" . $name . "` (number varchar(10),describ text,color varchar(10));");
                     if ($log_operation) logger($sql,$_COOKIE[$usercookie],"添加系列：".$brand." - ".$name."(".$brand_show." - ".$describ.")");
                     echo("<script language=\"JavaScript\">alert(\"添加成功！\");</script>");

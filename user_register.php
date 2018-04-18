@@ -21,8 +21,8 @@ $result = mysqli_query($sql, "insert into user values('" . $username . "','" . $
 $result = mysqli_query($sql, "select * from user where username='" . $username . "';");
 mysqli_data_seek($result, 0);
 if (mysqli_num_rows($result)) {
-    $result = mysqli_query($sql, "create table `#user_" . $username . "_log` (operation text, date text);");
-    $result = mysqli_query($sql, "create table `#user_" . $username . "_like` (type text, item text);");
+    $result = mysqli_query($sql, "create table `#user_" . $username . "_log` (`operation` text, `date` text);");
+    $result = mysqli_query($sql, "create table `#user_" . $username . "_like` (`type` text, `item` text, `show` text, `color` text);");
     $arr['status'] = "success";
     die(json_encode($arr));
 } else {

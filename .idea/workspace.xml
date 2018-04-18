@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e2e0040-ab22-4bb9-bbdf-21d5f4d73544" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/user_getlog.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/manage_content.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage_number.php" beforeDir="false" afterPath="$PROJECT_DIR$/manage_number.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage_series.php" beforeDir="false" afterPath="$PROJECT_DIR$/manage_series.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_register.php" beforeDir="false" afterPath="$PROJECT_DIR$/user_register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_setlike.php" beforeDir="false" afterPath="$PROJECT_DIR$/user_setlike.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,20 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="user_login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user_login.php">
+      <file leaf-file-name="user_register.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user_register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manage_brand.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage_brand.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="55" column="52" selection-start-line="55" selection-start-column="52" selection-end-line="55" selection-end-column="52" />
+            <state relative-caret-position="360">
+              <caret line="20" column="87" lean-forward="true" selection-start-line="20" selection-start-column="87" selection-end-line="20" selection-end-column="87" />
             </state>
           </provider>
         </entry>
@@ -54,15 +51,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_manager.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user_manager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="25" column="92" selection-start-line="25" selection-start-column="92" selection-end-line="25" selection-end-column="92" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="user_log.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user_log.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -72,38 +60,65 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/log.php">
+      <file leaf-file-name="user_getlog.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user_getlog.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+            <state relative-caret-position="180">
+              <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login.php">
+      <file leaf-file-name="user_change_pass.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user_change_pass.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="38" column="8" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="35" />
+            <state relative-caret-position="162">
+              <caret line="9" column="44" lean-forward="true" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user_change_nick.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user_change_nick.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_setlike.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/user_setlike.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="40" column="2" lean-forward="true" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
+            <state relative-caret-position="504">
+              <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="38" selection-end-column="77" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_register.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user_register.php">
+      <file leaf-file-name="user_dislike.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user_dislike.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+            <state relative-caret-position="162">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_getlike.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user_getlike.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="7" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -126,8 +141,6 @@
       <list>
         <option value="$PROJECT_DIR$/userinfo.php" />
         <option value="$PROJECT_DIR$/update.php" />
-        <option value="$PROJECT_DIR$/manage_number.php" />
-        <option value="$PROJECT_DIR$/manage_content.php" />
         <option value="$PROJECT_DIR$/log.php" />
         <option value="$PROJECT_DIR$/edit_str.php" />
         <option value="$PROJECT_DIR$/edit_link.php" />
@@ -135,14 +148,11 @@
         <option value="$PROJECT_DIR$/add_str.php" />
         <option value="$PROJECT_DIR$/add_link.php" />
         <option value="$PROJECT_DIR$/add_img.php" />
-        <option value="$PROJECT_DIR$/manage_series.php" />
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/user_change_pass.php" />
         <option value="$PROJECT_DIR$/user_log.php" />
-        <option value="$PROJECT_DIR$/user_register.php" />
         <option value="$PROJECT_DIR$/user_dislike.php" />
         <option value="$PROJECT_DIR$/user_getlike.php" />
-        <option value="$PROJECT_DIR$/user_setlike.php" />
         <option value="$PROJECT_DIR$/user_change_nick.php" />
         <option value="$PROJECT_DIR$/settings.php" />
         <option value="$PROJECT_DIR$/user_login.php" />
@@ -150,6 +160,12 @@
         <option value="$PROJECT_DIR$/user_manager.php" />
         <option value="$PROJECT_DIR$/user_info.php" />
         <option value="$PROJECT_DIR$/main.php" />
+        <option value="$PROJECT_DIR$/manage_series.php" />
+        <option value="$PROJECT_DIR$/manage_number.php" />
+        <option value="$PROJECT_DIR$/manage_content.php" />
+        <option value="$PROJECT_DIR$/user_getlog.php" />
+        <option value="$PROJECT_DIR$/user_register.php" />
+        <option value="$PROJECT_DIR$/user_setlike.php" />
       </list>
     </option>
   </component>
@@ -165,9 +181,9 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="991" />
-    <option name="y" value="182" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="852" />
+    <option name="y" value="327" />
     <option name="width" value="1400" />
     <option name="height" value="944" />
   </component>
@@ -176,7 +192,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,6 +203,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -228,7 +244,8 @@
       <workItem from="1523968977836" duration="993000" />
       <workItem from="1523970729950" duration="1885000" />
       <workItem from="1523972748659" duration="1268000" />
-      <workItem from="1523974465315" duration="648000" />
+      <workItem from="1523974465315" duration="797000" />
+      <workItem from="1524029977459" duration="8104000" />
     </task>
     <task id="LOCAL-00001" summary="Add user managing system&#10;Add maintenance system">
       <created>1523868606008</created>
@@ -258,17 +275,31 @@
       <option name="project" value="LOCAL" />
       <updated>1523973239492</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add user managing system&#10;Add maintenance system">
+      <created>1523977525206</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1523977525206</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add user managing system&#10;Add maintenance system">
+      <created>1523977564392</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1523977564392</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13711000" />
+    <option name="totallyTimeSpent" value="21964000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <frame x="852" y="327" width="1400" height="944" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15625" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28901735" />
       <window_info anchor="bottom" id="TODO" order="11" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="17" side_tool="true" />
@@ -303,13 +334,6 @@
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/user_change_pass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="30" lean-forward="true" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user_change_nick.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -498,20 +522,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage_number.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="53" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage_content.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -543,41 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user_dislike.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user_change_pass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="30" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user_change_nick.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user_setlike.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user_getlike.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -606,20 +581,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage_series.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="112" column="13" lean-forward="true" selection-start-line="93" selection-start-column="12" selection-end-line="112" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage_brand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="55" column="52" selection-start-line="55" selection-start-column="52" selection-end-line="55" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -634,10 +595,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user_register.php">
+    <entry file="file://$PROJECT_DIR$/manage_brand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+        <state relative-caret-position="990">
+          <caret line="55" column="52" selection-start-line="55" selection-start-column="52" selection-end-line="55" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_manager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="566">
+          <caret line="50" column="27" lean-forward="true" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage_series.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="160" column="131" selection-start-line="160" selection-start-column="131" selection-end-line="160" selection-end-column="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage_content.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage_number.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_dislike.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -648,10 +644,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user_manager.php">
+    <entry file="file://$PROJECT_DIR$/user_getlike.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="92" selection-start-line="25" selection-start-column="92" selection-end-line="25" selection-end-column="92" />
+        <state>
+          <caret selection-end-line="7" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="38" selection-end-column="77" />
         </state>
       </provider>
     </entry>
@@ -662,10 +665,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.php">
+    <entry file="file://$PROJECT_DIR$/user_getlog.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="40" column="2" lean-forward="true" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
+        <state relative-caret-position="180">
+          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_change_pass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="44" lean-forward="true" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_change_nick.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="87" lean-forward="true" selection-start-line="20" selection-start-column="87" selection-end-line="20" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_setlike.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
         </state>
       </provider>
     </entry>

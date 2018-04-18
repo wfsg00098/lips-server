@@ -154,7 +154,7 @@ if (!mysqli_fetch_row($result))
                 }
                 else
                 {
-                    $result = mysqli_query($sql,"insert into `".$brand."_".$series."` values('".$number."','".$describ."','".$color."');");
+                    $result = mysqli_query($sql, "insert into `" . $brand . "_" . $series . "` values('" . $number . "','" . $describ . "','" . $color . "','');");
                     $result = mysqli_query($sql,"create table `".$brand."_".$series."_".$number."` (type text,content text,describ text,size text,align text,bold text,italic text,underline text,color text);");
                     if ($log_operation) logger($sql,$_COOKIE[$usercookie],"添加色号：".$brand." - ".$series." - ".$number."(".$brand_show." - ".$series_show." - ".$number.")");
                     echo("<script language=\"JavaScript\">alert(\"添加成功！\");</script>");

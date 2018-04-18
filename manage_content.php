@@ -106,7 +106,7 @@ if (!mysqli_fetch_row($result))
                 $result = mysqli_query($sql,"drop table `".$brand."_".$series."_".$number."`;");
                 if ($log_operation) logger($sql,$_COOKIE[$usercookie],"删除色号".$brand." - ".$series." - ".$number."(".$brand_show." - ".$series_show." - ".$number.")");
                 echo("<script language=\"JavaScript\">alert(\"删除成功！\");</script>");
-                echo("<script language=\"JavaScript\">window.location.href='manage_series.php?brand=".covert2($brand)."&brand_show=".covert2($brand_show)."&series=" . covert2($series) . "&series_show=" . covert2($series_show)."';</script>");
+                echo("<script language=\"JavaScript\">window.location.href='manage_number.php?brand=" . covert2($brand) . "&brand_show=" . covert2($brand_show) . "&series=" . covert2($series) . "&series_show=" . covert2($series_show) . "';</script>");
 
             }
             else
